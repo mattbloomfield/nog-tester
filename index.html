@@ -1,0 +1,195 @@
+<DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      <title>Nog Rating</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap"
+        rel="stylesheet"
+      />
+      <style>
+            body {
+              /* background: #fffaf1; */
+              font-family: "Lora", Times, serif;
+              color: #b49d47;
+              font-size: 20px;
+              background: url("https://images.unsplash.com/photo-1449962887303-b4a91c7c560a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80");
+              background-size: cover;
+              background-position: 25% center;
+              background-repeat: no-repeat;
+              background-attachment: fixed;
+            }
+            h1 {
+              font-size: 2em;
+              margin: 0;
+              padding: 0;
+              font-weight: 700;
+              text-transform: uppercase;
+              font-size: 32px
+            }
+            p {
+              color: #008036;
+            }
+            form {
+              margin: 20px auto;
+              max-width: 500px;
+              text-align: center;
+              padding: 20px;
+              background: rgba(255, 255, 255, 0.8);
+              border-radius: 20px;
+            }
+            .dropdowns {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 10px 0;
+              margin: 25px auto;
+            }
+            .dropdown-container-overall {
+              margin: 25px auto;
+            }
+            select {
+              margin-left: 10px;
+            }
+            input[type=submit] {
+        background: #008036;
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-family: inherit;
+        border: 0;
+      </style>
+    </head>
+
+    <body>
+      <form
+        class="form"
+        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSed127jjs3IlfZlPu19xyiyRdggYesbuCBdStUuge_lv7vbcw/formResponse"
+      >
+        <h1>Rate the Nog!</h1>
+        <p>Rate each category on a scale of 1-5</p>
+        <p style="font-size: 70%">(where 1 is worst and 5 is best)</p>
+        <div id="SampleIdContainer" style="display: none">
+          <label>Sample ID:</label>
+          <input id="SampleId" name="entry.231987727" type="hidden" />
+        </div>
+        <div class="dropdowns">
+          <div class="dropdown-container">
+            <label>Aroma</label>
+            <select data-name="entry.1213566989">
+              <option value="">--</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <input name="entry.1213566989" type="hidden" required />
+          </div>
+          <div class="dropdown-container">
+            <label>Appearance</label>
+            <select data-name="entry.1079503878">
+              <option value="">--</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <input name="entry.1079503878" type="hidden" required />
+          </div>
+          <div class="dropdown-container">
+            <label>Thickness</label>
+            <select data-name="entry.292495031">
+              <option value="">--</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <input name="entry.292495031" type="hidden" required />
+          </div>
+          <div class="dropdown-container">
+            <label>Taste</label>
+            <select data-name="entry.1185442797">
+              <option value="">--</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <input name="entry.1185442797" type="hidden" required />
+          </div>
+          <div class="dropdown-container">
+            <label>After-taste</label>
+            <select data-name="entry.299041322">
+              <option value="">--</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <input name="entry.299041322" type="hidden" required />
+          </div>
+          <div class="dropdown-container">
+            <label>Spice</label>
+            <select data-name="entry.1308365952">
+              <option value="">--</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <input name="entry.1308365952" type="hidden" required />
+          </div>
+        </div>
+        <div class="dropdown-container dropdown-container-overall">
+          <label>Overall</label>
+          <select data-name="entry.804932920">
+            <option value="">--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          <input name="entry.804932920" type="hidden" required />
+        </div>
+        <div>
+          <input type="submit" value="Send" />
+        </div>
+      </form>
+      <script>
+        const selects = document.querySelectorAll("select");
+        for (let i = 0; i < selects.length; i++) {
+          selects[i].addEventListener("change", function () {
+            const value = selects[i].value;
+            selects[i].parentNode.querySelector("input[type=hidden]").value =
+              value;
+          });
+        }
+
+        // get the `sample` query paramter value
+        const sample = new URLSearchParams(window.location.search).get(
+          "sample"
+        );
+        if (sample) {
+          // populate the entry.231987727 field with the value
+          document.getElementById("SampleId").value = sample;
+        } else {
+          document.getElementById("SampleId").type = "text";
+          document.getElementById("SampleIdContainer").style.display = "block";
+        }
+      </script>
+    </body>
+  </html></DOCTYPE
+>
