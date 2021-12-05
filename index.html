@@ -204,7 +204,7 @@
               params.append(pair[0], pair[1]);
             }
             // make a post request with json data
-            fetch("/functions/submit-form", {
+            fetch("/.netlify/functions/submit-form", {
               method: "POST",
               body: {
                 params: params,
