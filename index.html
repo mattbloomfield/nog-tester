@@ -12,57 +12,57 @@
         rel="stylesheet"
       />
       <style>
-            body {
-              /* background: #fffaf1; */
-              font-family: "Lora", Times, serif;
-              color: #b49d47;
-              font-size: 20px;
-              background: url("https://images.unsplash.com/photo-1449962887303-b4a91c7c560a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80");
-              background-size: cover;
-              background-position: 25% center;
-              background-repeat: no-repeat;
-              background-attachment: fixed;
-            }
-            h1 {
-              font-size: 2em;
-              margin: 0;
-              padding: 0;
-              font-weight: 700;
-              text-transform: uppercase;
-              font-size: 32px
-            }
-            p {
-              color: #008036;
-            }
-            form {
-              margin: 20px auto;
-              max-width: 500px;
-              text-align: center;
-              padding: 20px;
-              background: rgba(255, 255, 255, 0.8);
-              border-radius: 20px;
-            }
-            .dropdowns {
-              display: grid;
-              grid-template-columns: 1fr 1fr;
-              gap: 10px 0;
-              margin: 25px auto;
-            }
-            .dropdown-container-overall {
-              margin: 25px auto;
-            }
-            select {
-              margin-left: 10px;
-            }
-            input[type=submit] {
-        background: #008036;
-        color: #fff;
-        border-radius: 5px;
-        padding: 10px 20px;
-        font-size: 18px;
-        text-transform: uppercase;
-        font-family: inherit;
-        border: 0;
+        body {
+          font-family: "Lora", Times, serif;
+          color: #b49d47;
+          font-size: 20px;
+          background: url("https://images.unsplash.com/photo-1449962887303-b4a91c7c560a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80");
+          background-size: cover;
+          background-position: 25% center;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+        }
+        h1 {
+          font-size: 2em;
+          margin: 0;
+          padding: 0;
+          font-weight: 700;
+          text-transform: uppercase;
+          font-size: 32px;
+        }
+        p {
+          color: #008036;
+        }
+        form {
+          margin: 20px auto;
+          max-width: 500px;
+          text-align: center;
+          padding: 20px;
+          background: rgba(255, 255, 255, 0.8);
+          border-radius: 20px;
+        }
+        .dropdowns {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 10px 0;
+          margin: 25px auto;
+        }
+        .dropdown-container-overall {
+          margin: 25px auto;
+        }
+        select {
+          margin-left: 10px;
+        }
+        input[type="submit"] {
+          background: #008036;
+          color: #fff;
+          border-radius: 5px;
+          padding: 10px 20px;
+          font-size: 18px;
+          text-transform: uppercase;
+          font-family: inherit;
+          border: 0;
+        }
       </style>
     </head>
 
@@ -183,12 +183,35 @@
           "sample"
         );
         if (sample) {
-          // populate the entry.231987727 field with the value
+          // set the value of the hidden input
           document.getElementById("SampleId").value = sample;
         } else {
+          // show the input so someone can enter a sample id
           document.getElementById("SampleId").type = "text";
           document.getElementById("SampleIdContainer").style.display = "block";
         }
+
+        // make an ajax request on form submission
+        document
+          .querySelector("form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            // convert form inputs to url search params
+            const params = new URLSearchParams();
+            for (const pair of formData.entries()) {
+              params.append(pair[0], pair[1]);
+            }
+            // make a post request with json data
+            fetch("/functions/submit-form", {
+              method: "POST",
+              body: {
+                params: params,
+                endpoint: form.target,
+              },
+            });
+          });
       </script>
     </body>
   </html></DOCTYPE
