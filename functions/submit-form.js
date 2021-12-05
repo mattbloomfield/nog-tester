@@ -2,7 +2,9 @@ import fetch from "node-fetch";
 
 exports.handler = async (event, context) => {
   try {
+    console.log("event", event);
     const endpoint = event.body.endpoint;
+    console.log("endpoint", endpoint);
     const response = await fetch(endpoint, {
       method: "POST",
       body: event.body.params,
